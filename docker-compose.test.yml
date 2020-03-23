@@ -1,0 +1,18 @@
+---
+version: '2'
+
+services:
+  notebook:
+    build: .
+    image: datascience-notebook
+    ports:
+      - 8888:8888
+  sut:
+    image: kiwicom/dgoss
+    environment:
+      - GOSS_FILES_PATH=/goss
+      - GOSS_FILES_STRATEGY=cp
+    command: /usr/local/bin/dgoss run datascience-notebook
+    volumes:
+      - ./goss:/goss
+      - /var/run/docker.sock:/var/run/docker.sock

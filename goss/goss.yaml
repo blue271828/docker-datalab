@@ -1,0 +1,11 @@
+user:
+  jovyan:
+    exists: true
+    uid: 1000
+    gid: 100
+    groups:
+    - users
+    home: /home/jovyan
+process:
+  jupyter-lab:
+    running: true
