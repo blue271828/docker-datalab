@@ -6,6 +6,13 @@ ARG NB_UID="1000"
 ARG NB_GID="100"
 
 
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends \
+    graphviz \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
+
+
 RUN useradd -mN -u ${NB_UID} -g ${NB_GID} ${NB_USER}
 ENV HOME=/home/${NB_USER}
 ENV PATH=${HOME}/.local/bin:$PATH
@@ -15,7 +22,21 @@ WORKDIR ${HOME}
 
 RUN pip install -U pip \
  && pip install -U --no-cache-dir \
-    jupyterlab
+    fastFM \
+    jupyterlab \
+    matplotlib \
+    numpy \
+    pandas \
+    pandas-profiling \
+    pydotplus \
+    scikit-learn \
+    scipy \
+    seaborn \
+    sympy \
+    tensorflow \
+    torch \
+    torchvision \
+    xgboost
 
 
 EXPOSE 8888

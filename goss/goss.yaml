@@ -9,3 +9,22 @@ user:
 process:
   jupyter-lab:
     running: true
+command:
+  pip list:
+    exit-status: 0
+    stdout:
+      - fastFM
+      - jupyterlab
+      - matplotlib
+      - numpy
+      - pandas
+      - pandas-profiling
+      - pydotplus
+      - scikit-learn
+      - scipy
+      - seaborn
+      - sympy
+      - tensorflow
+      - torch
+      - torchvision
+      - xgboost
