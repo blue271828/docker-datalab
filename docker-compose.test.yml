@@ -2,9 +2,9 @@
 version: '2'
 
 services:
-  notebook:
+  datalab:
     build: .
-    image: datascience-notebook
+    image: datalab
     ports:
       - 8888:8888
   sut:
@@ -12,7 +12,7 @@ services:
     environment:
       - GOSS_FILES_PATH=/goss
       - GOSS_FILES_STRATEGY=cp
-    command: /usr/local/bin/dgoss run datascience-notebook
+    command: /usr/local/bin/dgoss run datalab
     volumes:
       - ./goss:/goss
       - /var/run/docker.sock:/var/run/docker.sock
