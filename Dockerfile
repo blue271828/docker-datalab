@@ -32,6 +32,7 @@ RUN pip install -U pip \
     scikit-learn \
     scipy \
     seaborn \
+    statsmodels \
     sympy \
     tensorflow \
     torch \
