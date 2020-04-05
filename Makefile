@@ -3,9 +3,9 @@
 PJTDIR := $(dir $(lastword $(MAKEFILE_LIST)))
 
 
-.PHONY: datalab
-datalab:
-	@ docker-compose -f docker-compose.test.yml up datalab
+.PHONY: lab
+lab:
+	@ docker-compose -f docker-compose.test.yml up lab
 
 .PHONY: build
 build:

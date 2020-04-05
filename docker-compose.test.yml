@@ -2,7 +2,7 @@
 version: '2'
 
 services:
-  datalab:
+  lab:
     build: .
     image: datalab
     ports:
